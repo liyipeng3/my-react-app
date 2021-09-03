@@ -10,10 +10,4 @@ export const IndexWrapper = styled.div`
       background: aliceblue;
     }
   }
-
-
-
-
-
-
 `
