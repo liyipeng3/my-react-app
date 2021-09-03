@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import './index.less'
+import './index.scss';
 
 export default function IndexScreen() {
     return (
