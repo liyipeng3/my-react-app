@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import IndexScreen from "./screens";
 import AboutScreen from "./screens/about";
 
-import './App.css';
+import './App.scss';
 import {Header} from "@/commpoents/common/header";
 import {Footer} from "@/commpoents/common/footer";
 

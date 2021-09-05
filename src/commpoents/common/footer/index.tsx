@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './footer.css';
+import './footer.scss';
 
 interface FooterProps {
     logo?: string
