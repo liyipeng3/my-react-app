@@ -1,8 +1,10 @@
 import './menu.scss'
 import {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 interface DataItem {
     title: string,
+    path?: string,
     children?: DataItem[]
 }
 
@@ -15,6 +17,7 @@ interface MenuProps {
 }
 
 export const Menu = ({data}: MenuProps) => {
+    const history = useHistory();
     const [currentIndex, setCurrentIndex] = useState('');
     const menus: MenuItem[] = data.map((item, index) => {
         const temp: MenuItem = item as MenuItem;
@@ -30,12 +33,16 @@ export const Menu = ({data}: MenuProps) => {
         <div>
             {
                 menus.map(
-                    ({index, title, children = []}) => (
+                    ({index, title, children = [], path = ""}) => (
                         <div key={index} id={index}>
-                            <div onClick={()=>{setCurrentIndex(index===currentIndex?'':index)}}>{title}</div>
+                            <div onClick={() => {
+                                children.length ? setCurrentIndex(index === currentIndex ? '' : index) : history.push(path)
+                            }}>{title}</div>
                             <div className={index === currentIndex ? '' : 'display-none'}>
-                                {children?.map(({title}, index)=>(
-                                    <div key={title + index}>{title}</div>
+                                {children?.map(({title, path = "/"}, index) => (
+                                    <div key={title + index} onClick={() => {
+                                        history.push(path)
+                                    }}>{title}</div>
                                 ))}
                             </div>
                         </div>

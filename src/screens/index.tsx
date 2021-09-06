@@ -8,24 +8,25 @@ export default function IndexScreen() {
             <Menu data={[{
                 title: 'title1',
                 children: [
-                    {title: 'title1-1'},
-                    {title: 'title1-1'},
-                    {title: 'title1-1'},
-                    {title: 'title1-1'},
-                    {title: 'title1-1'},
+                    {title: 'title1-1', path: '/about'},
+                    {title: 'title1-1', path: '/about'},
+                    {title: 'title1-1', path: '/'},
+                    {title: 'title1-1', path: '/'},
+                    {title: 'title1-1', path: '/'}
                 ]
-            },{
+            }, {
                 title: 'title2',
-                children:[
-                    {title: 'title1-1'},
-                    {title: 'title1-1'},
-                    {title: 'title1-1'},
+                children: [
+                    {title: 'title1-1', path: '/'},
+                    {title: 'title1-1', path: '/'},
+                    {title: 'title1-1', path: '/'}
                 ]
-            },{
-                title: 'title3'
-            },{
+            }, {
+                title: 'title3',
+                path: '/about'
+            }, {
                 title: 'title4'
-            }]} />
+            }]}/>
             <div>Now in index</div>
             <Link to='/about'>about</Link>
             <div className='main'>
