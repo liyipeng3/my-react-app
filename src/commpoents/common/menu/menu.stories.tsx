@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    primary: true,
-    label: 'Button',
+    data: [{
+        title: 'title1'
+    }],
 };
