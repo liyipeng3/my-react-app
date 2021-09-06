@@ -27,7 +27,7 @@ export default function IndexScreen() {
             }, {
                 title: 'title4'
             }]}/>
-            <div>Now in index</div>
+            <div className="hidden">Now in index</div>
             <Link to='/about'>about</Link>
             <div className='main'>
                 <div className='box'>aa</div>

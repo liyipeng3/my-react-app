@@ -14,9 +14,28 @@ export default {
 // @ts-ignore
 const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Main = Template.bind({});
+Main.args = {
     data: [{
-        title: 'title1'
+        title: 'title1',
+        children: [
+            {title: 'title1-1', path: '/about'},
+            {title: 'title1-1', path: '/about'},
+            {title: 'title1-1', path: '/'},
+            {title: 'title1-1', path: '/'},
+            {title: 'title1-1', path: '/'}
+        ]
+    }, {
+        title: 'title2',
+        children: [
+            {title: 'title1-1', path: '/'},
+            {title: 'title1-1', path: '/'},
+            {title: 'title1-1', path: '/'}
+        ]
+    }, {
+        title: 'title3',
+        path: '/about'
+    }, {
+        title: 'title4'
     }],
 };

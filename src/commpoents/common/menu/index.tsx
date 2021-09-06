@@ -2,21 +2,21 @@ import './menu.scss'
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
 
-interface DataItem {
+interface Item {
     title: string,
     path?: string,
-    children?: DataItem[]
+    children?: Item[]
 }
 
-interface MenuItem extends DataItem {
+interface MenuItem extends Item {
     index: string
 }
 
 interface MenuProps {
-    data: DataItem[]
+    data: Item[]
 }
 
-export const Menu = ({data}: MenuProps) => {
+export const Menu = ({data, ...props}: MenuProps) => {
     const history = useHistory();
     const [currentIndex, setCurrentIndex] = useState('');
     const menus: MenuItem[] = data.map((item, index) => {
@@ -30,7 +30,7 @@ export const Menu = ({data}: MenuProps) => {
         return temp;
     })
     return (
-        <div>
+        <div className="menu" {...props}>
             {
                 menus.map(
                     ({index, title, children = [], path = ""}) => (
@@ -38,7 +38,7 @@ export const Menu = ({data}: MenuProps) => {
                             <div onClick={() => {
                                 children.length ? setCurrentIndex(index === currentIndex ? '' : index) : history.push(path)
                             }}>{title}</div>
-                            <div className={index === currentIndex ? '' : 'display-none'}>
+                            <div className={index === currentIndex ? '' : 'hidden'}>
                                 {children?.map(({title, path = "/"}, index) => (
                                     <div key={title + index} onClick={() => {
                                         history.push(path)
