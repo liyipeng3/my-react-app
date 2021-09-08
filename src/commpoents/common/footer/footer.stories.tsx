@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentStory, ComponentMeta} from '@storybook/react';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import {Footer} from './index';
 
@@ -11,8 +11,7 @@ export default {
 const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 
 export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-};
+LoggedIn.args = {};
 
 export const LoggedOut = Template.bind({});
 LoggedOut.args = {};

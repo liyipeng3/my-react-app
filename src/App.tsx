@@ -11,7 +11,7 @@ import {Footer} from "@/commpoents/common/footer";
 function App() {
     return (
         <div className="App">
-            <Header onLogin={()=>{}} onLogout={()=>{}} onCreateAccount={()=>{}} />
+            <Header />
             <Router>
                 <Switch>
                     <Route path="/" exact component={IndexScreen}/>
