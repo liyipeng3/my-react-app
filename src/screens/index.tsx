@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import './index.scss';
 import {Menu} from "@/commpoents/common/menu";
-import {Counter} from "@/features/counter/Counter";
+import {Counter} from "@/commpoents/test/counter";
 
 export default function IndexScreen() {
     return (
