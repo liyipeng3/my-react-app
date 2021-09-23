@@ -5,8 +5,8 @@ import IndexScreen from "./screens";
 import AboutScreen from "./screens/about";
 
 import './App.scss';
-import {Header} from "@/commpoents/common/header";
-import {Footer} from "@/commpoents/common/footer";
+import {Header} from "@/components/common/header";
+import {Footer} from "@/components/common/footer";
 
 function App() {
     return (
