@@ -33,7 +33,7 @@ export default function IndexScreen() {
             <div className='main'>
                 <div className='box'>aa</div>
             </div>
-            <Counter />
+            {/*<Counter />*/}
         </div>
     )
 }
