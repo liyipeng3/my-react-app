@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import './index.scss';
 import {Menu} from "@/components/common/menu";
+import {Counter} from "@/components/test/counter";
 // import CompState from "@/components/test/state";
 
 export default function IndexScreen() {
@@ -34,7 +35,7 @@ export default function IndexScreen() {
                 <div className='box'>aa</div>
             </div>
             {/*<CompState/>*/}
-            {/*<Counter />*/}
+            <Counter />
         </div>
     )
 }
