@@ -1,4 +1,8 @@
-.theme-#{$theme-name}{
+.theme-#{$theme-name} {
   background-color: $background-color;
   color: $font-color;
+
+  header, footer {
+    border-color: $border-color;
+  }
 }

@@ -12,13 +12,12 @@ export const Header = ({logo = ""}: HeaderProps) => {
     const user = useStoreSelector(selectUser);
 
     return (
-    <header>
-        <div className="wrapper">
+        <header>
             <div>
                 {logo}
                 <h1>lyp123</h1>
             </div>
             <span>{user.username}</span>
-        </div>
-    </header>
-)};
+        </header>
+    )
+};
