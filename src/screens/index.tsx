@@ -1,15 +1,19 @@
 import {Link} from "react-router-dom";
 import './index.scss';
 import {Menu} from "@/components/common/menu";
-import {login} from "@/store/user";
+import {login, logout} from "@/store/user";
 import {useStoreDispatch} from "@/store/hooks";
 import {useState} from "react";
+import {setTheme} from "@/store/common/skin";
 // import CompState from "@/components/test/state";
 
 export default function IndexScreen() {
     const dispatch = useStoreDispatch();
     const setUser = () => {
         dispatch(login({uid, username}))
+    }
+    const setMyTheme = (name: 'dark' | 'light') => {
+        dispatch(setTheme({name}))
     }
     const [uid, setUid] = useState(-1)
     const [username, setUsername] = useState('未登录')
@@ -52,7 +56,20 @@ export default function IndexScreen() {
         }}/>
             <button onClick={() => {
                 setUser()
-            }}>login</button>
+            }}>login
+            </button>
+            <button onClick={() => {
+                dispatch(logout())
+            }}>logout
+            </button>
+            <button onClick={() => {
+                setMyTheme('dark')
+            }}>dark
+            </button>
+            <button onClick={() => {
+                setMyTheme('light')
+            }}>light
+            </button>
         </div>
     )
 }

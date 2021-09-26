@@ -1,4 +1,4 @@
-import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
+import {Action, createStore, ThunkAction} from '@reduxjs/toolkit';
 import {persistReducer, persistStore} from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import {rootReducer} from './reducers'
@@ -10,11 +10,9 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-export const store = configureStore({
-    reducer: persistedReducer,
-});
-
+export const store = createStore(persistedReducer)
 export const persistor = persistStore(store)
+
 
 export type StoreDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

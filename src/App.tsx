@@ -3,14 +3,19 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import IndexScreen from "./screens";
 import AboutScreen from "./screens/about";
+import cn from "classnames";
 
 import './App.scss';
 import {Header} from "@/components/common/header";
 import {Footer} from "@/components/common/footer";
+import {useStoreSelector} from "@/store/hooks";
+import {selectSkin} from "@/store/common/skin";
 
 function App() {
+    const skin = useStoreSelector(selectSkin);
+
     return (
-        <div className="App">
+        <div className={cn("App", `theme-${skin.name}`)}>
             <Header />
             <Router>
                 <Switch>
