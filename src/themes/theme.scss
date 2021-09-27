@@ -1,7 +1,10 @@
 .theme-#{$theme-name} {
-  transition: all 0.05s linear;
   background-color: $background-color;
   color: $font-color;
+
+  &, * {
+    transition: all 0.05s linear;
+  }
 
   header {
     background-color: $header-background-color;

@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from './logo.svg';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import IndexScreen from "./screens";
-import AboutScreen from "./screens/about";
+import IndexScreen from "@/screens";
+import AboutScreen from "@/screens/about";
 import cn from "classnames";
 
-import './App.scss';
+import '@/App.scss';
 import {Header} from "@/components/common/header";
 import {Footer} from "@/components/common/footer";
 import {useStoreSelector} from "@/store/hooks";
