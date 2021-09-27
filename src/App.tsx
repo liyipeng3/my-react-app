@@ -15,7 +15,7 @@ function App() {
     const skin = useStoreSelector(selectSkin);
 
     return (
-        <div className={cn("App", `theme-${skin.name}`)}>
+        <div className={cn("container", `theme-${skin.name}`)}>
             <Header />
             <Router>
                 <Switch>
